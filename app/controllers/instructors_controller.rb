@@ -22,6 +22,8 @@ class InstructorsController < ApplicationController
 
   def destroy
     instructor = Instructor.find_by!(id: params[:id])
+    instructor.destroy
+    head :no_content
   end
 
   private
